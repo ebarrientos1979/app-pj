@@ -1,4 +1,8 @@
 <label>{{ title.toUpperCase() }}</label> <br>
-<input class="claseTexto" type="text" [(ngModel)]="primerNumero" placeholder="Primer Numero"/> <br><br>
-<input class="claseTexto" type="text" [(ngModel)] = "segundoNumero" placeholder="Segundo Numero"/> <br>
+<input class="claseTexto" type="number" [(ngModel)]="primerNumero" placeholder="Primer Numero"/> <br><br>
+<input class="claseTexto" type="number" [(ngModel)] = "segundoNumero" placeholder="Segundo Numero"/> <br>
 <button id="idCalculos" name="btnCalculos" (click)="clickBoton()" >Hacer Calculos</button>
+<p>La suma es: {{ primerNumero + segundoNumero }}</p>
+<p>La resta es: {{primerNumero - segundoNumero }} </p>
+<p>La multiplicacion es: {{primerNumero * segundoNumero}} </p>
+<p>La division es: {{primerNumero / segundoNumero}} </p>
