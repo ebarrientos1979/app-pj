@@ -49,4 +49,8 @@ export class ListaComponent {
     this.miNombre = '';
     this.miDescripcion = '';
   };
+
+  eliminar = (_id: number) => {
+    this.miLista = this.miLista.filter((e) => e.id !== _id);
+  };
 }
