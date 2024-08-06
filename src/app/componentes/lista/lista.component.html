@@ -1,0 +1,11 @@
+<label for="Id">Id:</label>
+<input type="number" id="Id">
+<label for="Nombre">Nombre:</label>
+<input type="text" id="Nombre">
+<label for="Descripcion">Descripcion:</label>
+<input type="text" id="Descripcion">
+<ul>
+    <li *ngFor="let item of miLista" > 
+        <b>{{ item.id }}</b> -  {{ item.nombre }}      
+    </li>
+</ul>
