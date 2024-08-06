@@ -3,11 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ListaComponent } from './componentes/lista/lista.component';
+import { FormularioComponent } from './componentes/formulario/formulario.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, ListaComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    FormsModule,
+    ListaComponent,
+    FormularioComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
