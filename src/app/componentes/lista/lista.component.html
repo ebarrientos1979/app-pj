@@ -1,24 +1,23 @@
 <div class="mb-3 row">
-    <label for="Id" class="col-sm-2 col-form-label">Id:</label>
-    <div class="col-sm-10">
-        <input class="form-control" type="number" id="Id">
-    </div>    
     <label for="Nombre" class="col-sm-2 col-form-label" >Nombre:</label>
     <div class="col-sm-10">
-        <input class="form-control" type="text" id="Nombre">
+        <input class="form-control" type="text" id="Nombre" [(ngModel)]="miNombre">
     </div>
     <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion:</label>
     <div class="col-sm-10">
-        <input class="form-control" type="text" id="Descripcion">
+        <input class="form-control" type="text" id="Descripcion" [(ngModel)]="miDescripcion">
     </div>        
 </div>
 <div class="mb-3 row">
     <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="submit" class="btn btn-primary" (click)="click()" >Agregar</button>
+    </div>
+    <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" (click)="limpiar()" >Limpiar</button>
     </div>
 </div>
 <ul>
     <li *ngFor="let item of miLista" > 
-        <b>{{ item.id }}</b> -  {{ item.nombre }}      
+        <b>{{ item.id }}</b> -  {{ item.nombre }} - {{ item.descripcion }}     
     </li>
 </ul>
