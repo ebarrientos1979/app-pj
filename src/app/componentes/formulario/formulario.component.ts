@@ -23,7 +23,6 @@ export class FormularioComponent {
       nombre: this.miNombre,
       descripcion: this.miDescripcion,
     };
-    //console.log(this.miObjeto);
     this.limpiar();
   }
 
@@ -31,5 +30,10 @@ export class FormularioComponent {
     this.miId = 0;
     this.miNombre = '';
     this.miDescripcion = '';
+  };
+
+  cargarDatos = (e: Objeto) => {
+    this.miDescripcion = e.descripcion;
+    this.miNombre = e.nombre;
   };
 }

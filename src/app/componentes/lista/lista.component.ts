@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Objeto } from '../../modelos/objetos';
@@ -12,13 +12,19 @@ import { Objeto } from '../../modelos/objetos';
 })
 export class ListaComponent implements OnInit {
   miLista: Array<Objeto> = [];
+  @Output() modificarEvent = new EventEmitter<Objeto>();
 
   @Input()
   set miObjetoRec(value: Objeto) {
     if (value.nombre.trim().length > 0) {
+      value.id = this.miLista.length + 1;
       this.miLista.push(value);
     }
   }
+
+  modificar = (e: Objeto) => {
+    this.modificarEvent.emit(e);
+  };
 
   ngOnInit(): void {
     console.log('Method not implemented.');

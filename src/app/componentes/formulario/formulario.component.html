@@ -14,4 +14,4 @@
     </div>        
 </div>
 
-<app-lista [miObjetoRec]="miObjeto" ></app-lista>
+<app-lista [miObjetoRec]="miObjeto" (modificarEvent)="cargarDatos($event)" ></app-lista>

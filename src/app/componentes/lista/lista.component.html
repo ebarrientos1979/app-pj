@@ -1,6 +1,7 @@
 <ul  class="list-group">
     <li *ngFor="let item of miLista" > 
         <b>{{ item.id }}</b> -  {{ item.nombre }} - {{ item.descripcion }}   
+        <button type="button" class="btn btn-primary" (click)="modificar(item)" >Cargar</button>
         <button type="submit" class="btn btn-danger" (click)="eliminar(item.id)" >Eliminar</button>
     </li>
 </ul>
