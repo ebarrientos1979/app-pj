@@ -11,13 +11,14 @@ import { Objeto } from '../../modelos/objetos';
   styleUrl: './lista.component.scss',
 })
 export class ListaComponent implements OnInit {
-  @Input() miObjetoRec: Objeto = { id: 0, nombre: '', descripcion: '' };
-  miLista = [
-    { id: 1, nombre: 'Dato 1', descripcion: 'Descripcion 1' },
-    { id: 2, nombre: 'Dato 2', descripcion: 'Descripcion 2' },
-    { id: 3, nombre: 'Dato 3', descripcion: 'Descripcion 3' },
-    { id: 4, nombre: 'Dato 4', descripcion: 'Descripcion 4' },
-  ];
+  miLista: Array<Objeto> = [];
+
+  @Input()
+  set miObjetoRec(value: Objeto) {
+    if (value.nombre.trim().length > 0) {
+      this.miLista.push(value);
+    }
+  }
 
   ngOnInit(): void {
     console.log('Method not implemented.');
