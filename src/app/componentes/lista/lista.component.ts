@@ -2,16 +2,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Objeto } from '../../modelos/objetos';
+import { ComunicacionService } from '../../services/comunicacion.service';
 
 @Component({
   selector: 'app-lista',
   standalone: true,
   imports: [FormsModule, CommonModule],
+  providers: [ComunicacionService],
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.scss',
 })
 export class ListaComponent implements OnInit {
   miLista: Array<Objeto> = [];
+  msgComunicacion: string = '';
   @Output() modificarEvent = new EventEmitter<Objeto>();
 
   @Input()
@@ -20,6 +23,10 @@ export class ListaComponent implements OnInit {
       value.id = this.miLista.length + 1;
       this.miLista.push(value);
     }
+  }
+
+  constructor(private comunicacionService: ComunicacionService) {
+    this.msgComunicacion = this.comunicacionService.getMessage();
   }
 
   modificar = (e: Objeto) => {
