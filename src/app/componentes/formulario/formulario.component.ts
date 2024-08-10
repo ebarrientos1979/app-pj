@@ -25,9 +25,7 @@ export class FormularioComponent {
   }
 
   click() {
-    this.comunicacionService.saveData('id', this.miId);
-    this.comunicacionService.saveData('nombre', this.miNombre);
-    this.comunicacionService.saveData('descripcion', this.miDescripcion);
+    this.comunicacionService.clearAllData();
     this.miObjeto = {
       id: this.miId,
       nombre: this.miNombre,

@@ -21,6 +21,7 @@ export class ListaComponent implements OnInit {
   set miObjetoRec(value: Objeto) {
     if (value.nombre.trim().length > 0) {
       value.id = this.miLista.length + 1;
+      this.comunicacionService.saveData('objeto', JSON.stringify(value));
       this.miLista.push(value);
     }
   }
@@ -30,7 +31,9 @@ export class ListaComponent implements OnInit {
   }
 
   modificar = (e: Objeto) => {
-    this.modificarEvent.emit(e);
+    let obj: Objeto = JSON.parse(this.comunicacionService.getData('objeto'));
+    console.log(obj);
+    this.modificarEvent.emit(obj);
   };
 
   ngOnInit(): void {
